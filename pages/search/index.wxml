@@ -1,2 +1,6 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="search_row">
+    <input value="" placeholder="请输入您要搜索的商品">
+    </input>
+      
+</view>
+  

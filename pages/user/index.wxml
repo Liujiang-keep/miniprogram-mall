@@ -1,2 +1,12 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user_info_wrap">
+  <view wx:if{{}} class="user_img_wrap">
+    <image class="user_big" src="{{}}"></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{}}"></image>
+      <view class="user_name">{{}}</view>
+    </view>
+  </view>
+  <view class="user_btn" wx:else>
+    <navigator url="/pages/login/index"></navigator>
+  </view>
+</view>
