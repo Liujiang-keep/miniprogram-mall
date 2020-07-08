@@ -1,15 +1,15 @@
 <!-- 收货地址 -->
 <view class="revice_address_row" >
-  <view class="address_btn" wx:if="">
-    <button bindtap="" type="primary">获取收货地址</button>
+  <view class="address_btn" wx:if="{{!address.userName}}">
+    <button bindtap="handleChooseAddress" type="primary">获取收货地址</button>
   </view>
   <!-- 当收货地址存在，详细信息就显示 -->
   <view wx:else class="user_info_row">
     <view class="user_info">
-      <view></view>
-      <view></view>
+      <view>{{address.userName}}</view>
+      <view>{{address.all}}</view>
     </view>
-    <view class="user_phone"></view>
+    <view class="user_phone">{{address.telNumber}}</view>
   </view>
 </view>
 
@@ -57,17 +57,17 @@
 <view class="footer_tool">
   <!-- 全选 -->
   <view class="all_chk_wrap">
-    <checkbox-group>
-      <checkbox checked="">全选</checkbox>
+    <checkbox-group bindtap='handleItemAllCheck'>
+      <checkbox checked="{{allChecked}}">全选</checkbox>
     </checkbox-group>
   </view>
   <!-- 总价格 -->
   <view class="total_price_wrap">
     <view class="total_price">
-      合计： <text class="total_price_text">￥</text>
+      合计： <text class="total_price_text">￥{{totalPrice}}</text>
     </view>
     <view>包含运费</view>
   </view>
   <!-- 结算 -->
-  <view class="order_pay_wrap" bindtap="">结算 {{}}</view>
+  <view class="order_pay_wrap" bindtap="handlePay">结算 {{totalNum}}</view>
 </view>
